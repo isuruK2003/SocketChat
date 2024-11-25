@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spring Boot WebSocket Chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.0/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="message-interface">
+        <div class="message-interface-head">
+            <div class="avatar">
+                <span id="avatar-symbol">#</span>
+            </div>
+            <input type="text" id="sender-name" placeholder="Enter your name" autocomplete="off" autofocus="on">
+            <button class="icon" id="connect-button">
+                <img class="icon" src="join-group-icon.svg" alt="Join">
+            </button>
+        </div>
+
+        <div id="errors"></div>
+        
+        <div class="message-container" id="messages">
+            <div class="message this-user">
+                <span class="sender">Sender</span>
+                <span class="content">Content</span>
+            </div>
+            
+            <div class="message">
+                <span class="sender">Sender</span>
+                <span class="content">
+                    Content
+                </span>
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <input type="text" id="content" placeholder="Enter your message" autocomplete="off" spellcheck="true">
+            <button class="icon" id="send-button">
+                <img src="send-icon.svg" alt="send">
+            </button>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+
+</body>
+</html>

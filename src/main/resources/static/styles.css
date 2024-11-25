@@ -1,0 +1,249 @@
+:root {
+    /* Color Variables */
+    --color-black: rgb(0, 0, 0);
+    --color-black-transparent: rgba(0, 0, 0, 0.2);
+    --color-black-transparent-light: rgba(0, 0, 0, 0.1);
+    --color-black-light: rgb(51, 51, 51);
+    --color-gray: rgb(153, 153, 153);
+    --color-gray-dark: rgb(102, 102, 102);
+    --color-windows-blue: rgb(27, 127, 227);
+    --color-windows-blue-light: rgb(34, 130, 226);
+    --color-windows-blue-dark: rgb(21, 103, 185);
+    --color-white: rgb(255, 255, 255);
+    --color-white-dark: #f2f2f2;
+    --color-blue-lightest: #ebf7ff;
+    /* --color-blue-lightest: rgb(215, 240, 255); */
+    --color-blue-light: rgb(147, 191, 216);
+    --color-blue-mid: rgb(124, 173, 201);
+    --color-blue-transparent: rgba(82, 171, 222, 0.5);
+
+    /* Border Radius Variables */
+    --radius-standard: 8px;
+    --radius-small: 4px;
+    --radius-mid: 16px;
+    --radius-full: 50%;
+}
+
+/* Defaults */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: var(--color-white-dark);
+}
+
+input {
+    width: 100%;
+    padding: 8px 12px;
+    font-family: inherit;
+    border: 1px solid var(--color-blue-transparent);
+    border-radius: var(--radius-standard);
+    box-sizing: border-box;
+    background-color: inherit;
+}
+
+input:focus {
+    outline: 2px solid var(--color-blue-mid);
+}
+
+button {
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+button.std {
+    padding: 8px 16px;
+    color: var(--color-white);
+    background-color: var(--color-windows-blue);
+    border-radius: var(--radius-standard);
+}
+
+button.icon {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-windows-blue-light);
+    color: var(--color-white);
+    padding: 8px;
+    border-radius: var(--radius-full);
+}
+
+button.icon img {
+    width: 20px;
+    height: 20px;
+}
+
+button.icon:hover {
+    background-color: var(--color-windows-blue);
+}
+
+button.icon:active {
+    background-color: var(--color-windows-blue-dark);
+}
+
+/*** Messaging Interface ***/
+
+.message-interface {
+    margin: 8px auto;
+    max-width: 300px;
+    overflow: hidden;
+    /* border: 1px solid var(--color-black-transparent); */
+    box-shadow: 0px 0px 5px 2px var(--color-black-transparent-light);
+    border-radius: var(--radius-standard);
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.message-interface > * {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/*** Message Interface Heading ***/
+
+.message-interface-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-black);
+    background-color: var(--color-blue-lightest);
+}
+
+.message-interface-head input {
+    border: none;
+}
+
+.message-interface-head input:focus {
+    outline: none;
+}
+
+.avatar > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    padding: 12px;
+    background-color: chocolate;
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    cursor: default;
+}
+
+/* Message Container Section */
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    height: 60vh;
+    gap: 4px;
+    overflow-y: scroll;
+}
+
+/* Message */
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.message.this-user {
+    align-self: end;
+}
+
+.sender {
+    font-size: 0.75rem;
+    color: var(--color-gray-dark);
+}
+
+.content {
+    padding: 12px;
+    background-color: var(--color-gray-dark);
+    border-radius: 0px 16px 16px 16px;
+    font-size: 0.9rem;
+    color: var(--color-white);
+}
+
+.message.this-user .content {
+    border-radius: 16px 0px 16px 16px;
+    background-color: var(--color-windows-blue);
+}
+
+.message.this-user .sender {
+    align-self: end;
+}
+
+/* Error Message */
+
+.error {
+    background-color: rgb(227, 71, 71);
+    color: var(--color-white);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 4px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-close {
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-close:hover {
+    background-color: rgb(208, 61, 61);
+}
+
+/*** Message Input Section ***/
+
+.input-group {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    background-color: var(--color-blue-lightest);
+}
+
+.input-group input {
+    background-color: var(--color-white);
+    border-radius: var(--radius-mid);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
