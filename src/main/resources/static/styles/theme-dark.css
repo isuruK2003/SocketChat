@@ -2,7 +2,9 @@
     --color-background-global: #121212;
 
     --color-background-global-a1: #313131;
+    --color-background-global-a2: #454545;
 
+    --color-background-global-b1: #dfefff;
     --color-background-global-b2: #1a71c8;
     --color-background-global-b3: #0e3b69;
 
@@ -15,8 +17,8 @@
     
     --color-foreground-global-a1: #ffffff;
     --color-foreground-global-a2: #f8dbdb;
+    --color-foreground-global-a3: #dfdfdf;
     
-    --color-foreground-global-b1: #777;
     
     --color-background-scrollbar-track: #3d3d3d;
     --color-background-scrollbar-thumb: #606060c1;
@@ -79,11 +81,12 @@ button.icon:active {
 }
 
 .content {
-    background-color: var(--color-foreground-global-b1);
-    color: var(--color-foreground-global-a1);
+    color: var(--color-foreground-global-a3);
+    background-color: var(--color-background-global-a2);
 }
 
 .message.this-user .content {
+    color: var(--color-background-global-b1);
     background-color: var(--color-background-global-b2);
 }
 
