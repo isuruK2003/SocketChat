@@ -1,8 +1,16 @@
 /*** Messaging Interface ***/
 
+.message-interface-wrap {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .message-interface {
+    height: 80vh;
+    width: 300px;
     margin: auto;
-    max-width: 300px;
     overflow: hidden;
     border-radius: var(--radius-standard);
     display: flex;
@@ -48,11 +56,11 @@
 /* Message Container Section */
 
 .message-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    height: 60vh;
     gap: 4px;
     overflow-y: scroll;
 }

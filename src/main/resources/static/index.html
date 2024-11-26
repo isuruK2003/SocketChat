@@ -10,24 +10,27 @@
     <!-- <link rel="stylesheet" href="styles/layout_desktop.css"> -->
 </head>
 <body>
-    <div class="message-interface">
-        <div class="message-interface-head">
-            <div class="avatar">
-                <span id="avatar-symbol">#</span>
+    <div class="message-interface-wrap">
+        <div class="message-interface">
+            <div class="message-interface-head">
+                <div class="avatar">
+                    <span id="avatar-symbol">#</span>
+                </div>
+                <input type="text" id="sender-name" placeholder="Enter your name" autocomplete="off" autofocus="on" spellcheck="false">
+                <button class="icon" id="connect-button">
+                    <img class="icon" src="icons/join-group-icon.svg" alt="Join">
+                </button>
             </div>
-            <input type="text" id="sender-name" placeholder="Enter your name" autocomplete="off" autofocus="on" spellcheck="false">
-            <button class="icon" id="connect-button">
-                <img class="icon" src="icons/join-group-icon.svg" alt="Join">
-            </button>
-        </div>
-        <div class="message-container" id="messages"></div>
-        <div class="input-group">
-            <input type="text" id="content" placeholder="Enter your message" autocomplete="off" spellcheck="true">
-            <button class="icon" id="send-button">
-                <img src="icons/send-icon.svg" alt="send">
-            </button>
+            <div class="message-container" id="messages"></div>
+            <div class="input-group">
+                <input type="text" id="content" placeholder="Enter your message" autocomplete="off" spellcheck="true">
+                <button class="icon" id="send-button">
+                    <img src="icons/send-icon.svg" alt="send">
+                </button>
+            </div>
         </div>
     </div>
     <script src="client.js"></script>
 </body>
 </html>
+    
