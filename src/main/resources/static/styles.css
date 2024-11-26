@@ -103,11 +103,11 @@ button.icon:active {
 
 .message-interface > * {
     width: 100%;
-    padding: 8px;
+    padding: 16px;
     box-sizing: border-box;
 }
 
-/*** Message Interface Heading ***/
+/*** Header ***/
 
 .message-interface-head {
     display: flex;
