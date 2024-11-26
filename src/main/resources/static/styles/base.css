@@ -10,9 +10,8 @@
     --color-windows-blue-light: rgb(34, 130, 226);
     --color-windows-blue-dark: rgb(21, 103, 185);
     --color-white: rgb(255, 255, 255);
-    --color-white-dark: #f2f2f2;
+    --color-white-dark: rgb(242, 242, 242);
     --color-blue-lightest: #ebf7ff;
-    /* --color-blue-lightest: rgb(215, 240, 255); */
     --color-blue-light: rgb(147, 191, 216);
     --color-blue-mid: rgb(124, 173, 201);
     --color-blue-transparent: rgba(82, 171, 222, 0.5);
@@ -28,22 +27,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, sans-serif;
-    background-color: var(--color-white-dark);
 }
 
 input {
     width: 100%;
     padding: 8px 12px;
     font-family: inherit;
-    border: 1px solid var(--color-blue-transparent);
     border-radius: var(--radius-standard);
     box-sizing: border-box;
     background-color: inherit;
 }
 
-input:focus {
-    outline: 2px solid var(--color-blue-mid);
-}
+/* input:focus { < See Themes > } */
 
 button {
     border: none;
@@ -55,16 +50,12 @@ button {
 
 button.std {
     padding: 8px 16px;
-    color: var(--color-white);
-    background-color: var(--color-windows-blue);
     border-radius: var(--radius-standard);
 }
 
 button.icon {
     display: flex;
     align-items: center;
-    background-color: var(--color-windows-blue-light);
-    color: var(--color-white);
     padding: 8px;
     border-radius: var(--radius-full);
 }
@@ -74,13 +65,11 @@ button.icon img {
     height: 20px;
 }
 
-button.icon:hover {
-    background-color: var(--color-windows-blue);
-}
+/*
+button.icon:hover { < See Themes > }
 
-button.icon:active {
-    background-color: var(--color-windows-blue-dark);
-}
+button.icon:active  { < See Themes > }
+*/
 
 /* Scrollbar */
 
@@ -88,15 +77,8 @@ button.icon:active {
     width: 4px;
 }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background: #cfcfcf;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+/*
+::-webkit-scrollbar-track { < See Themes > }
+::-webkit-scrollbar-thumb { < See Themes > }
+::-webkit-scrollbar-thumb:hover { < See Themes > }
+*/

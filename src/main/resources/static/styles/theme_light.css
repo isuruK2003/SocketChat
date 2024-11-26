@@ -1,44 +1,107 @@
+:root {
+    --color-background-global: rgb(0, 0, 0);
+    --color-background-global-a1: rgba(0, 0, 0, 0.2);
+    --color-background-global-a2: rgba(0, 0, 0, 0.1);
+    --color-background-global-a3: rgb(51, 51, 51);
+    --color-foreground-global-a1: rgb(153, 153, 153);
+    --color-foreground-global-a2: rgb(102, 102, 102);
+    --color-background-global-b1: rgb(27, 127, 227);
+    --color-background-global-b2: rgb(34, 130, 226);
+    --color-background-global-b3: rgb(21, 103, 185);
+    --color-foreground-global: rgb(255, 255, 255);
+    --color-background-global-c1: rgb(242, 242, 242);
+    --color-background-global-d1: rgb(235, 247, 255);
+    --color-background-global-d2: rgb(147, 191, 216);
+    --color-background-global-d3: rgb(124, 173, 201);
+    --color-background-global-d4: rgba(82, 171, 222, 0.5);
+    --color-background-error: rgb(227, 71, 71);
+    --color-background-error-a1: rgb(208, 61, 61);
+}
+
+body {
+    background-color: var(--color-background-global-c1);
+}
+
+input {
+    border: 1px solid var(--color-background-global-d4);
+}
+
+input:focus {
+    outline: 2px solid var(--color-background-global-d3);
+}
+
+button.std {
+    color: var(--color-foreground-global);
+    background-color: var(--color-background-global-b1);
+}
+
+button.icon {
+    background-color: var(--color-background-global-b2);
+    color: var(--color-foreground-global);
+}
+
+button.icon:hover {
+    background-color: var(--color-background-global-b1);
+}
+
+button.icon:active {
+    background-color: var(--color-background-global-b3);
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(241, 241, 241);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgb(207, 207, 207);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(85, 85, 85);
+}
+
 .message-interface {
-    box-shadow: 0px 0px 5px 2px var(--color-black-transparent-light);
-    background-color: var(--color-white);
+    box-shadow: 0px 0px 5px 2px var(--color-background-global-a2);
+    background-color: var(--color-foreground-global);
 }
 
 .message-interface-head {
-    color: var(--color-black);
-    background-color: var(--color-blue-lightest);
+    color: var(--color-background-global);
+    background-color: var(--color-background-global-d1);
 }
 
 .avatar > * {
-    background-color: var(--color-windows-blue);
-    color: var(--color-white);
+    background-color: var(--color-background-global-b1);
+    color: var(--color-foreground-global);
 }
 
 .sender {
-    color: var(--color-gray-dark);
+    color: var(--color-foreground-global-a2);
 }
 
 .content {
-    background-color: var(--color-gray-dark);
-    color: var(--color-white);
+    background-color: var(--color-foreground-global-a2);
+    color: var(--color-foreground-global);
 }
 
 .message.this-user .content {
-    background-color: var(--color-windows-blue);
+    background-color: var(--color-background-global-b1);
 }
 
 .error {
-    background-color: rgb(227, 71, 71);
-    color: var(--color-white);
+    background-color: var(--color-background-error);
+    color: var(--color-foreground-global);
 }
 
 .button-close:hover {
-    background-color: rgb(208, 61, 61);
+    background-color: var(--color-background-error-a1);
 }
 
 .input-group {
-    background-color: var(--color-blue-lightest);
+    background-color: var(--color-background-global-d1);
 }
 
 .input-group input {
-    background-color: var(--color-white);
+    background-color: var(--color-foreground-global);
 }
