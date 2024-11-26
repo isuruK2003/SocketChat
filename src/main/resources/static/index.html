@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Spring Boot WebSocket Chat</title>
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.0/dist/sockjs.min.js"></script>
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="theme_light.css">
     <!-- <link rel="stylesheet" href="layout_desktop.css"> -->
 </head>
-
 <body>
     <div class="message-interface">
         <div class="message-interface-head">
@@ -22,27 +20,7 @@
                 <img class="icon" src="icons/join-group-icon.svg" alt="Join">
             </button>
         </div>
-
-        <div id="errors"></div>
-        
-        <div class="message-container" id="messages">
-            <!-- Messages will added to here -->
-
-            <!-- Samples:
-            
-            <div class="message this-user">
-                <span class="sender">Sender</span>
-                <span class="content">Content</span>
-            </div>
-
-            <div class="message">
-                <span class="sender">Sender</span>
-                <span class="content">
-                    Content
-            </span> 
-            </div> -->
-        </div>
-        
+        <div class="message-container" id="messages"></div>
         <div class="input-group">
             <input type="text" id="content" placeholder="Enter your message" autocomplete="off" spellcheck="true">
             <button class="icon" id="send-button">
@@ -50,8 +28,6 @@
             </button>
         </div>
     </div>
-
     <script src="client.js"></script>
-
 </body>
 </html>
