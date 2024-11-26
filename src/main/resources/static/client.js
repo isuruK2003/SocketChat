@@ -19,6 +19,10 @@ function readMessage() {
     });
 }
 
+function clearMessage() {
+    contentInputElement.value = "";
+}
+
 function readAndSetsenderName() {
     let senderNameInput = senderNameInputElement.value.trim();
     if (senderNameInput === "") {
@@ -71,7 +75,7 @@ function subscribeToMessages() {
 
 function displayErrorMessage(errorMessage) {
     let errorId = `error-${Date.now()}`; // generates unique error id
-    errorsContainerElement.innerHTML += 
+    messagesContainerElement.innerHTML += 
         `<div class="error" id="${errorId}" onclick="closeDisplayedErrorMessage('${errorId}')">
              <span>${errorMessage}</span>
              <button class="button-close">
@@ -85,13 +89,13 @@ function closeDisplayedErrorMessage(errorId) {
 }
 
 function sendMessage() {
-    if (stompClient === null) {
-        displayErrorMessage("Please enter your name and connect");
-        return;
-    }
     try {
-        let message = readMessage();
-        stompClient.send('/app/sendMessage', {}, message);
+        if (stompClient === null) {
+            displayErrorMessage("Please enter your name and connect");
+            return;
+        }
+        stompClient.send('/app/sendMessage', {}, readMessage());
+        clearMessage();
     } catch (error) {
         displayErrorMessage(error);
     }
@@ -107,9 +111,20 @@ function init() {
         setAvatarBackgroundColor();
         connect();
     } catch (error) {
-        console.log();
+        console.log(error);
     }
 }
 
-sendButtonElement.addEventListener("click", sendMessage);
-connectButtonElement.addEventListener("click", init);
+function main() {
+    sendButtonElement.addEventListener("click", sendMessage);
+    connectButtonElement.addEventListener("click", init);
+
+    senderNameInputElement.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") init();
+    });
+    contentInputElement.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") sendMessage();
+    });
+}
+
+document.addEventListener("DOMContentLoaded", main);
