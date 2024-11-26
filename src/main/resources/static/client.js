@@ -35,12 +35,23 @@ function readAndSetsenderName() {
 }
 
 function setAvatarBackgroundColor() {
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     avatarSymbolElement.style.backgroundColor = `#${randomColor}`;
 }
 
 function setAvatarSymbol() {
     avatarSymbolElement.innerHTML = senderName.charAt(0).toUpperCase();
+}
+
+function autoScroll(scrollAnyway = false) {
+    const scrolledAmount = messagesContainerElement.scrollHeight
+        - (messagesContainerElement.scrollTop + messagesContainerElement.clientHeight);
+
+    const isNearBottom = scrolledAmount < 200;
+
+    if (isNearBottom || scrollAnyway) {
+        messagesContainerElement.scrollTop = messagesContainerElement.scrollHeight;
+    }
 }
 
 function displayMessage(messageObj) {
@@ -50,6 +61,19 @@ function displayMessage(messageObj) {
             <span class="sender">${messageObj.sender}</span>
             <span class="content">${messageObj.content}</span>
         </div>`;
+    autoScroll(senderName === messageObj.sender);
+}
+
+function displayErrorMessage(errorMessage) {
+    let errorId = `error-${Date.now()}`; // generates unique error id
+    messagesContainerElement.innerHTML +=
+        `<div class="error" id="${errorId}" onclick="closeDisplayedErrorMessage('${errorId}')">
+             <span>${errorMessage}</span>
+             <button class="button-close">
+                 &#10005;
+             </button>
+         </div>`;
+    autoScroll(true)
 }
 
 function connect() {
@@ -73,17 +97,6 @@ function subscribeToMessages() {
     );
 }
 
-function displayErrorMessage(errorMessage) {
-    let errorId = `error-${Date.now()}`; // generates unique error id
-    messagesContainerElement.innerHTML += 
-        `<div class="error" id="${errorId}" onclick="closeDisplayedErrorMessage('${errorId}')">
-             <span>${errorMessage}</span>
-             <button class="button-close">
-                 &#10005;
-             </button>
-         </div>`;
-}
-
 function closeDisplayedErrorMessage(errorId) {
     document.getElementById(errorId).remove();
 }
@@ -105,7 +118,7 @@ function init() {
     try {
         if (senderName !== null) {
             return;
-        } 
+        }
         readAndSetsenderName();
         setAvatarSymbol();
         setAvatarBackgroundColor();
@@ -117,11 +130,13 @@ function init() {
 
 function main() {
     sendButtonElement.addEventListener("click", sendMessage);
+
     connectButtonElement.addEventListener("click", init);
 
     senderNameInputElement.addEventListener("keypress", (event) => {
         if (event.key === "Enter") init();
     });
+
     contentInputElement.addEventListener("keypress", (event) => {
         if (event.key === "Enter") sendMessage();
     });
