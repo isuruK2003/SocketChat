@@ -1,21 +1,4 @@
 :root {
-    /* Color Variables */
-    --color-black: rgb(0, 0, 0);
-    --color-black-transparent: rgba(0, 0, 0, 0.2);
-    --color-black-transparent-light: rgba(0, 0, 0, 0.1);
-    --color-black-light: rgb(51, 51, 51);
-    --color-gray: rgb(153, 153, 153);
-    --color-gray-dark: rgb(102, 102, 102);
-    --color-windows-blue: rgb(27, 127, 227);
-    --color-windows-blue-light: rgb(34, 130, 226);
-    --color-windows-blue-dark: rgb(21, 103, 185);
-    --color-white: rgb(255, 255, 255);
-    --color-white-dark: rgb(242, 242, 242);
-    --color-blue-lightest: #ebf7ff;
-    --color-blue-light: rgb(147, 191, 216);
-    --color-blue-mid: rgb(124, 173, 201);
-    --color-blue-transparent: rgba(82, 171, 222, 0.5);
-
     /* Border Radius Variables */
     --radius-standard: 8px;
     --radius-small: 4px;
