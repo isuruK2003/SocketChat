@@ -14,7 +14,7 @@ body {
 
 input {
     width: 100%;
-    padding: 8px 12px;
+    padding: 8px 16px;
     font-family: inherit;
     border-radius: var(--radius-standard);
     box-sizing: border-box;
