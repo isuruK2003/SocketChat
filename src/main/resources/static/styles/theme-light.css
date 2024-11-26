@@ -1,21 +1,21 @@
 :root {
-    --color-background-global: rgb(0, 0, 0);
-    --color-background-global-a1: rgba(0, 0, 0, 0.2);
-    --color-background-global-a2: rgba(0, 0, 0, 0.1);
-    --color-background-global-a3: rgb(51, 51, 51);
-    --color-foreground-global-a1: rgb(153, 153, 153);
-    --color-foreground-global-a2: rgb(102, 102, 102);
-    --color-background-global-b1: rgb(27, 127, 227);
-    --color-background-global-b2: rgb(34, 130, 226);
-    --color-background-global-b3: rgb(21, 103, 185);
-    --color-foreground-global: rgb(255, 255, 255);
-    --color-background-global-c1: rgb(242, 242, 242);
-    --color-background-global-d1: rgb(235, 247, 255);
-    --color-background-global-d2: rgb(147, 191, 216);
-    --color-background-global-d3: rgb(124, 173, 201);
-    --color-background-global-d4: rgba(82, 171, 222, 0.5);
-    --color-background-error: rgb(227, 71, 71);
-    --color-background-error-a1: rgb(208, 61, 61);
+    --color-background-global: #000000;
+    --color-background-global-a1: #00000033;
+    --color-background-global-a2: #0000001a;
+    --color-background-global-a3: #333333;
+    --color-foreground-global-a1: #999999;
+    --color-foreground-global-a2: #666666;
+    --color-background-global-b1: #1b7fe3;
+    --color-background-global-b2: #2282e2;
+    --color-background-global-b3: #1567b9;
+    --color-foreground-global: #ffffff;
+    --color-background-global-c1: #f2f2f2;
+    --color-background-global-d1: #ebf7ff;
+    --color-background-global-d2: #93bfd8;
+    --color-background-global-d3: #7cadc9;
+    --color-background-global-d4: #52abde80;
+    --color-background-error: #e34747;
+    --color-background-error-a1: #d03d3d;
 }
 
 body {
