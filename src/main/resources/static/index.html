@@ -5,7 +5,10 @@
     <title>Spring Boot WebSocket Chat</title>
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.0/dist/sockjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout_mobile.css">
+    <link rel="stylesheet" href="theme_light.css">
+    <!-- <link rel="stylesheet" href="layout_desktop.css"> -->
 </head>
 
 <body>
@@ -14,9 +17,9 @@
             <div class="avatar">
                 <span id="avatar-symbol">#</span>
             </div>
-            <input type="text" id="sender-name" placeholder="Enter your name" autocomplete="off" autofocus="on">
+            <input type="text" id="sender-name" placeholder="Enter your name" autocomplete="off" autofocus="on" spellcheck="false">
             <button class="icon" id="connect-button">
-                <img class="icon" src="join-group-icon.svg" alt="Join">
+                <img class="icon" src="icons/join-group-icon.svg" alt="Join">
             </button>
         </div>
 
@@ -43,7 +46,7 @@
         <div class="input-group">
             <input type="text" id="content" placeholder="Enter your message" autocomplete="off" spellcheck="true">
             <button class="icon" id="send-button">
-                <img src="send-icon.svg" alt="send">
+                <img src="icons/send-icon.svg" alt="send">
             </button>
         </div>
     </div>

@@ -1,0 +1,44 @@
+.message-interface {
+    box-shadow: 0px 0px 5px 2px var(--color-black-transparent-light);
+    background-color: var(--color-white);
+}
+
+.message-interface-head {
+    color: var(--color-black);
+    background-color: var(--color-blue-lightest);
+}
+
+.avatar > * {
+    background-color: var(--color-windows-blue);
+    color: var(--color-white);
+}
+
+.sender {
+    color: var(--color-gray-dark);
+}
+
+.content {
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+}
+
+.message.this-user .content {
+    background-color: var(--color-windows-blue);
+}
+
+.error {
+    background-color: rgb(227, 71, 71);
+    color: var(--color-white);
+}
+
+.button-close:hover {
+    background-color: rgb(208, 61, 61);
+}
+
+.input-group {
+    background-color: var(--color-blue-lightest);
+}
+
+.input-group input {
+    background-color: var(--color-white);
+}
