@@ -1,0 +1,118 @@
+:root {
+    --color-background-global: #121212;
+
+    --color-background-global-a1: #313131;
+
+    --color-background-global-b2: #1a71c8;
+    --color-background-global-b3: #0e3b69;
+
+    --color-background-global-c1: #252525;
+    
+    --color-background-error: #98636332;
+    --color-background-error-a1: #98636371;
+    
+    --color-foreground-global: #9e9e9e;
+    
+    --color-foreground-global-a1: #ffffff;
+    --color-foreground-global-a2: #f8dbdb;
+    
+    --color-foreground-global-b1: #777;
+    
+    --color-background-scrollbar-track: #3d3d3d;
+    --color-background-scrollbar-thumb: #606060c1;
+    --color-background-scrollbar-thumb-hover: #878787;
+    
+    --color-box-shadow: #0000003d;
+    
+    --color-border-global: #53656f80;
+    --color-outline-global: #3d546481;
+}
+
+body {
+    color: var(--color-foreground-global);
+    background-color: var(--color-background-global);
+}
+
+input {
+    border: 1px solid var(--color-border-global);
+}
+
+input:focus {
+    outline: 2px solid var(--color-outline-global);
+}
+
+button.std {
+    color: var(--color-foreground-global-a1);
+    background-color: var(--color-background-global-b2);
+}
+
+button.icon {
+    background-color: var(--color-background-global-b2);
+    color: var(--color-foreground-global-a1);
+}
+
+button.icon:hover {
+    background-color: var(--color-background-global-b2);
+}
+
+button.icon:active {
+    background-color: var(--color-background-global-b3);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background-scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: var(--color-background-scrollbar-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-background-scrollbar-thumb-hover);
+}
+
+.message-interface {
+    box-shadow: 0px 0px 5px 2px var(--color-box-shadow);
+    background-color: var(--color-background-global-a1);
+}
+
+.message-interface-head {
+    color: var(--color-foreground-global);
+    background-color: var(--color-background-global-c1);
+}
+
+.avatar > * {
+    background-color: var(--color-background-global-b2);
+    color: var(--color-foreground-global-a1);
+}
+
+.sender {
+    color: var(--color-foreground-global-b1);
+}
+
+.content {
+    background-color: var(--color-foreground-global-b1);
+    color: var(--color-foreground-global-a1);
+}
+
+.message.this-user .content {
+    background-color: var(--color-background-global-b2);
+}
+
+.error {
+    background-color: var(--color-background-error);
+    color: var(--color-foreground-global-a2);
+}
+
+.button-close:hover {
+    background-color: var(--color-background-error-a1);
+}
+
+.input-group {
+    background-color: var(--color-background-global-c1);
+}
+
+.input-group input {
+    background-color: var(--color-background-global-a1);
+}
