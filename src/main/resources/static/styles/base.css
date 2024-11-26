@@ -19,6 +19,7 @@ input {
     border-radius: var(--radius-standard);
     box-sizing: border-box;
     background-color: inherit;
+    color: inherit;
 }
 
 /* input:focus { < See Themes > } */
