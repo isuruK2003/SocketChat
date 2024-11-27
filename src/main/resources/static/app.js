@@ -141,16 +141,19 @@ function toggleThemeToDeviceTheme() {
     }
 }
 
-function init() {
+function init(clearMessageContainer = true) {
     try {
         if (senderName !== null) {
+            displayErrorMessage("Please join to a socket.")
             return;
         }
         readAndSetsenderName();
         setAvatarSymbol();
         setAvatarBackgroundColor();
         connect();
-        messagesContainerElement.innerHTML = '';
+        if (clearMessageContainer) {
+            messagesContainerElement.innerHTML = '';
+        }
     } catch (error) {
         console.log(error);
     }
