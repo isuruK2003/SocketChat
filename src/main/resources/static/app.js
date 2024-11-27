@@ -41,7 +41,11 @@ function readAndSetsenderName() {
 }
 
 function setAvatarBackgroundColor() {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    const maxColor = 11184810; // decimals
+    const minColor =  5592405; // decimals
+    const randomColor = Math.floor(
+        (Math.random() * maxColor) + minColor
+    ).toString(16); // hexadecimals
     avatarButtonlElement.style.backgroundColor = `#${randomColor}`;
 }
 
@@ -120,21 +124,6 @@ function sendMessage() {
     }
 }
 
-function init() {
-    try {
-        if (senderName !== null) {
-            return;
-        }
-        readAndSetsenderName();
-        setAvatarSymbol();
-        setAvatarBackgroundColor();
-        connect();
-        messagesContainerElement.innerHTML = '';
-    } catch (error) {
-        console.log(error);
-    }
-}
-
 function toggleTheme(newTheme) {
     if (newTheme === "dark") {
         themeStylesheetLinkElement.href = DARK_THEME_STYLESHEET;
@@ -149,6 +138,21 @@ function toggleThemeToDeviceTheme() {
         toggleTheme("dark");
     } else {
         toggleTheme("light");
+    }
+}
+
+function init() {
+    try {
+        if (senderName !== null) {
+            return;
+        }
+        readAndSetsenderName();
+        setAvatarSymbol();
+        setAvatarBackgroundColor();
+        connect();
+        messagesContainerElement.innerHTML = '';
+    } catch (error) {
+        console.log(error);
     }
 }
 
