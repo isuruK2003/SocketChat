@@ -143,6 +143,15 @@ function toggleTheme(newTheme) {
     }
 }
 
+function toggleThemeToDeviceTheme() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+        toggleTheme("dark");
+    } else {
+        toggleTheme("light");
+    }
+}
+
 function main() {
     sendButtonElement.addEventListener("click", sendMessage);
 
@@ -173,14 +182,10 @@ function main() {
         }
     });
 
+    toggleThemeToDeviceTheme();
     window.matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change',({ matches }) => {
-            console.log("pass");
-        if (matches) {
-            toggleTheme("dark");
-        } else {
-            toggleTheme("light");
-        }
+            toggleThemeToDeviceTheme();
     });
 }
 
