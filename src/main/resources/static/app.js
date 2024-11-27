@@ -186,7 +186,6 @@ function main() {
         }
     });
 
-    toggleThemeToDeviceTheme();
     window.matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change',({ matches }) => {
             toggleThemeToDeviceTheme();
