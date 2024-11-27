@@ -6,7 +6,13 @@ var senderNameInputElement = document.getElementById("sender-name");
 var contentInputElement = document.getElementById("content");
 var sendButtonElement = document.getElementById("send-button");
 var connectButtonElement = document.getElementById("connect-button");
-var avatarSymbolElement = document.getElementById("avatar-symbol");
+var avatarButtonlElement = document.getElementById("avatar-button");
+var changeThemeButtonElement = document.getElementById("change-theme-button");
+var themeStylesheetLinkElement = document.getElementById("theme-stylesheet");
+var menuElement = document.getElementById("menu");
+
+const DARK_THEME_STYLESHEET = "./styles/theme-dark.css";
+const LIGHT_THEME_STYLESHEET = "./styles/theme-light.css";
 
 function readMessage() {
     let content = contentInputElement.value.trim();
@@ -36,11 +42,11 @@ function readAndSetsenderName() {
 
 function setAvatarBackgroundColor() {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    avatarSymbolElement.style.backgroundColor = `#${randomColor}`;
+    avatarButtonlElement.style.backgroundColor = `#${randomColor}`;
 }
 
 function setAvatarSymbol() {
-    avatarSymbolElement.innerHTML = senderName.charAt(0).toUpperCase();
+    avatarButtonlElement.innerHTML = senderName.charAt(0).toUpperCase();
 }
 
 function autoScroll(scrollAnyway = false) {
@@ -123,8 +129,17 @@ function init() {
         setAvatarSymbol();
         setAvatarBackgroundColor();
         connect();
+        messagesContainerElement.innerHTML = '';
     } catch (error) {
         console.log(error);
+    }
+}
+
+function toggleTheme(newTheme) {
+    if (newTheme === "dark") {
+        themeStylesheetLinkElement.href = DARK_THEME_STYLESHEET;
+    } else if (newTheme === "light") {
+        themeStylesheetLinkElement.href = LIGHT_THEME_STYLESHEET;
     }
 }
 
@@ -139,6 +154,33 @@ function main() {
 
     contentInputElement.addEventListener("keypress", (event) => {
         if (event.key === "Enter") sendMessage();
+    });
+
+    changeThemeButtonElement.addEventListener("click", () => {
+        const href = themeStylesheetLinkElement.href;
+        if (href.includes("dark")) {
+            toggleTheme("light")
+        } else if (href.includes("light")) {
+            toggleTheme("dark")
+        }
+    });
+
+    avatarButtonlElement.addEventListener("click", () => {
+        if (["none", ""].includes(menuElement.style.display)) {
+            menuElement.style.display = "inline-block";
+        } else {
+            menuElement.style.display = "none";
+        }
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change',({ matches }) => {
+            console.log("pass");
+        if (matches) {
+            toggleTheme("dark");
+        } else {
+            toggleTheme("light");
+        }
     });
 }
 
