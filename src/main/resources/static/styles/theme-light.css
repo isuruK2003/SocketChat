@@ -10,14 +10,14 @@
     --color-background-global-c2: #7cadc9;
     --color-background-global-c3: #52abde80;
 
-    --color-background-error: #e34747;
-    --color-background-error-a1: #d03d3d;
+    --color-background-global-d1: #c5858596;
+    --color-background-global-d2: #ffc7c79e;
 
     --color-foreground-global: #000000;
 
     --color-foreground-global-a1: #ffffff;
-
     --color-foreground-global-b1: #666666;
+    --color-foreground-global-c1: #745353ec;
     
     --color-background-scrollbar-track: #f1f1f1;
     --color-background-scrollbar-thumb: #c1c1c1c1;
@@ -85,12 +85,12 @@ button.icon:active {
 }
 
 .error {
-    background-color: var(--color-background-error);
-    color: var(--color-foreground-global-a1);
+    background-color: var(--color-background-global-d2);
+    color: var(--color-foreground-global-c1);
 }
 
 .button-close:hover {
-    background-color: var(--color-background-error-a1);
+    background-color: var(--color-background-global-d1);
 }
 
 .input-group {
