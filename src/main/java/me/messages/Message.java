@@ -20,7 +20,7 @@ public class Message {
 	@Override
 	public String toString() {
 		return "Message{"
-			+ "sendor = " + this.sender
+			+ "sender = " + this.sender
 			+ ", content = " + this.content
 			+ "}";
 	}
