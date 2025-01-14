@@ -10,37 +10,47 @@
         <link rel="icon" href="./icons/logo.svg">
     </head>
     <body>
-        <div class="message-interface-wrap">
-            <div class="message-interface">
-                <div class="message-interface-head">
-                    <div class="avatar">
-                        <span id="avatar-button">#</span>
-                        <div id="menu" class="menu">
-                            <ul class="menu-list">
-                                <li class="menu-item" id="change-theme-button">Switch Theme</li>
-                            </ul>
+        <div class="app">
+            <div class="app-interface">
+                <div class="room-list">
+                    <div class="room-list-item">
+                        <span>Room Name</span>
+                        <span>Room Id</span>
+                    </div>
+                </div>
+                <div class="message-interface-wrap">
+                    <div class="message-interface">
+                        <div class="message-interface-head">
+                            <div class="avatar">
+                                <span id="avatar-button">#</span>
+                                <div id="menu" class="menu">
+                                    <ul class="menu-list">
+                                        <li class="menu-item" id="change-theme-button">Switch Theme</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="text" id="sender-name" placeholder="Enter your name" autocomplete="off" autofocus="on"
+                            spellcheck="false">
+                            <button class="icon" id="connect-button">
+                                <img class="icon" src="icons/join-group-icon.svg" alt="Join">
+                            </button>
+                        </div>
+                        <div class="message-container" id="messages">
+                            <div class="landing">
+                                <img class="landing-image" src="./icons/logo.svg">
+                                <span class="landing-title">SocketChat</span>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="content" placeholder="Enter your message" autocomplete="off" spellcheck="true">
+                            <button class="icon" id="send-button">
+                                <img src="icons/send-icon.svg" alt="send">
+                            </button>
                         </div>
                     </div>
-                    <input type="text" id="sender-name" placeholder="Enter your name" autocomplete="off" autofocus="on"
-                    spellcheck="false">
-                    <button class="icon" id="connect-button">
-                        <img class="icon" src="icons/join-group-icon.svg" alt="Join">
-                    </button>
-                </div>
-                <div class="message-container" id="messages">
-                    <div class="landing">
-                        <img class="landing-image" src="./icons/logo.svg">
-                        <span class="landing-title">SocketChat</span>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <input type="text" id="content" placeholder="Enter your message" autocomplete="off" spellcheck="true">
-                    <button class="icon" id="send-button">
-                        <img src="icons/send-icon.svg" alt="send">
-                    </button>
                 </div>
             </div>
         </div>
         <script src="app.js"></script>
     </body>
-    </html>
+</html>

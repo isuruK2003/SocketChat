@@ -1,3 +1,46 @@
+/* App */
+
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.app-interface {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-standard);
+    overflow: hidden;
+}
+
+.app-interface > * {
+    height: 600px;
+    width: 300px;
+}
+
+.room-list {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.room-list-item {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    padding: 0.835rem;
+}
+
+.room-list-item:hover {
+    background-color: black;
+}
+
 /* Landing Section */
 
 .landing {
@@ -29,18 +72,14 @@ img.landing-image {
 /*** Messaging Interface ***/
 
 .message-interface-wrap {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .message-interface {
-    height: 600px;
-    width: 300px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: var(--radius-standard);
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 4px;

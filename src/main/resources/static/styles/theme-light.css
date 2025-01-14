@@ -57,7 +57,6 @@ button.icon:active {
 }
 
 .message-interface {
-    box-shadow: 0px 0px 5px 2px var(--color-box-shadow);
     background-color: var(--color-background-global-a1);
 }
 
@@ -122,4 +121,12 @@ img.landing-image {
 
 .menu-item:hover {
     background-color: var(--color-background-global-c1);
+}
+
+.room-list {
+    background-color: var(--color-background-global-a1);
+}
+
+.app-interface {
+    box-shadow: 0px 0px 5px 2px var(--color-box-shadow);
 }
